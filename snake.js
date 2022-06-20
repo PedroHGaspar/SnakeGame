@@ -9,6 +9,7 @@ class ParteCobra {//AQUI EU USEI CLASS PARA "TESTAR" ALGO QUE ESTOU APRENDENDO A
 }
 
 let velocidade = 7; //VELOCIDADE PADRAO DA COBRINHA, POREM VAI AUMENTAR DEPOIS DE PEGAR ALGUMAS MAÇÃS
+let nivel = 1 //NIVEL INICIAL DO GAME
 
 let ContadorQuadrado = 20;
 let TamanhoQuadrado = canvas.width / ContadorQuadrado - 2;
@@ -49,11 +50,13 @@ function drawGame() {
 
   drawPontos();
 
-  if (Pontos > 100) {
+  if (Pontos >= 100) {
     velocidade = 9;
+    nivel = 2
   }
-  if (Pontos > 300) {//AQUI PODE SE COLOCAR MAIS IFS CASO QUEIRA QUE A VELOCIDADE SEJA MAIOR. SÓ COLOCAR QUANTOS PONTOS A MAIS  E QUAL A VELOCIDADE A MAIS QUE DESEJAR
+  if (Pontos >= 300) {//AQUI PODE SE COLOCAR MAIS IFS CASO QUEIRA QUE A VELOCIDADE SEJA MAIOR. SÓ COLOCAR QUANTOS PONTOS A MAIS  E QUAL A VELOCIDADE A MAIS QUE DESEJAR
     velocidade = 11;
+    nivel = 3
   }
   if(Pontos > 500){//AQUI SE OS PONTOS FOREM MAIORES DO QUE 500, O JOGO IRÁ ENCERRAR.
     gameOver()
@@ -116,8 +119,8 @@ function isGameOver() {
 
 function drawPontos() {//AQUI É O CONTADOR DE PONTOS NO CANTO SUPERIOR DIREITO
   ctx.fillStyle = "white";
-  ctx.font = "10px Verdana";
-  ctx.fillText("Pontos " + Pontos, canvas.width - 60, 10);//ESSE 60 E ESSE 10 DETERMINAM A DISTANCIA DA "PAREDE" E DO "TETO", RESPECTIVAMENTE.(MARGIN LEFT E MARGIN TOP)
+  ctx.font = "14px Verdana";
+  ctx.fillText(`Nivel: ${nivel}`+"     Pontos: " + Pontos, canvas.width - 170, 15);//ESSE 60 E ESSE 10 DETERMINAM A DISTANCIA DA "PAREDE" E DO "TETO", RESPECTIVAMENTE.(MARGIN LEFT E MARGIN TOP)
 }
 
 function LimpaTela() {//GRID DO JOGO
