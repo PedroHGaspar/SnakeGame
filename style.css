@@ -1,0 +1,42 @@
+
+*{
+    font-family: 'Orbitron', sans-serif;
+}
+
+body{
+    margin: 0;
+    background-color: gray;
+}
+.game{
+    margin-top: 110px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+canvas{
+    box-shadow: black 20px 10px 50px;
+}
+ 
+
+.titulo{
+    color: green;
+    background-color: rgb(243, 227, 3);
+    width: 400px;
+    margin: 0;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#infotela{
+    background-color: rgb(243, 227, 3);
+    width: 400px;
+    text-align: center;
+    margin: 0;
+    color: rgb(0, 0, 0);
+}
+.rodape{
+    text-align: center;
+    font-size: 20px;
+}
