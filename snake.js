@@ -100,8 +100,7 @@ function isGameOver() {
       ctx.font = "50px Verdana";
 
       var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-      gradient.addColorStop("0", " magenta");
-      gradient.addColorStop("0.5", "blue");
+      gradient.addColorStop("0.1", "yellow");
       gradient.addColorStop("1.0", "red");
       //A FUNÇÃO LINEAR GRADIENT ELA FAZ UMA GRADIÊNCIA NAS CORES COMO O PRÓPRIO NOME JA DIZ, E AQUI ELA AGE COMO SE FOSSE UM CÍRCULO, COMEÇANDO NO VERMELHO, INDO PARA O MAGENTA, DEPOIS PARA O AZUL, EM SEGUIDA PARA O MAGENTA E FINALIZANDO NO VERMELHO
 
