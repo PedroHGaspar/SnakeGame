@@ -31,7 +31,6 @@ let VeloInicialY = 0;//VELOCIDADE INICIAL = 0 OU SEJA COBRINHA PARADA
 
 let Pontos = 0;//PONTOS VALEM 10 COM VALOR INICIAL DE 0
 
-
 //game loop
 function drawGame() {
   VeloInicial = VelocidadeX;//AMBOS SAO 0, ENTAO SAO IGUAIS
@@ -155,7 +154,7 @@ function DesenharMaca() {//FUNÇAO PARA DESENHAR A MAÇÃ
 }
 
 function ChecarPosicaoMaça() {
-  if (MacaX === CabecaX && MacaY == CabecaY) {
+  if (MacaX === CabecaX && MacaY === CabecaY) {
     MacaX = Math.floor(Math.random() * ContadorQuadrado);
     MacaY = Math.floor(Math.random() * ContadorQuadrado);
     TamanhoCauda++;
@@ -198,6 +197,7 @@ function keyDown(event) {
     VelocidadeX = 1;
   }
 }
+
 
 drawGame();//AQUI DESENHA O JOGO INTEIRO
 
