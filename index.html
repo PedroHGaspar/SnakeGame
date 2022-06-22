@@ -6,42 +6,20 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-    <style>
-        *{
-            font-family: 'Orbitron', sans-serif;
-        }
-        body{
-            background-color: rgb(112, 108, 108);
-            margin: 0px;
-            padding: 0px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        canvas{
-            box-shadow: black 20px 10px 50px;
-        }
-         
-
-        .titulo{
-            color: green;
-            background-color: rgb(243, 227, 3);
-            width: 400px;
-            margin: 0;
-            margin-top: 30px;
-            text-align: center;
-        }
- 
-    </style>    
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="style.css"> 
 </head>
 <!--CANVAS DIFÍCIL DE MANIPULAR =[ -->
 <body>
-    <h1 class="titulo">Snake The Game</h1>
-    <div class="bottom"></div>
-    
-    <canvas id="game" width="400" height="400">
+   
+    <div class="game">
+        <h1 class="titulo">Snake The Game</h1>
+        <h3 id="infotela"></h3>
+       <canvas id="game" width="400" height="400"></canvas> 
+    </div>
+    <div class="rodape">
+        ....rodape..
+    </div>
     <script src="snake.js"></script>
     <img src="IMG/images.JFIF"></img>
 

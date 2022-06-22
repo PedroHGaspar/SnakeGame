@@ -1,5 +1,6 @@
 const canvas = document.getElementById("game");//CHAMA LA NO INDEX.HTML A ID GAME
 const ctx = canvas.getContext("2d");//FUNCTION DO CANVAS É FEITA EM 2DIMENSÕES
+const infoTela = document.getElementById("infotela")
 
 class ParteCobra {//AQUI EU USEI CLASS PARA "TESTAR" ALGO QUE ESTOU APRENDENDO AOS POUCOS, MAS PELO QUE EU ENTENDI, A CLASS TEM QUASE A MESMA FUNÇÃO DA FUNCTION, SÓ QUE SE USA CLASS NO LUGAR. NESSE CASO EU USEI E DEU CERTO, IREI PROCURAR MAIS INFORMAÇÕES A RESPEITO DA DIFERENÇA ENTRE CLASS E FUNCTION NO ARQUIVO JAVASCRIPT
   constructor(x, y) {
@@ -28,7 +29,7 @@ let VelocidadeY = 0;//VELOCIDADE INICIAL ANTES DE APERTAR BOTOES
 let VeloInicial = 0;//VELOCIDADE INICIAL = 0 OU SEJA COBRINHA PARADA
 let VeloInicialY = 0;//VELOCIDADE INICIAL = 0 OU SEJA COBRINHA PARADA
 
-let Pontos = 10;//PONTOS VALEM 10
+let Pontos = 0;//PONTOS VALEM 10 COM VALOR INICIAL DE 0
 
 
 //game loop
@@ -36,6 +37,7 @@ function drawGame() {
   VeloInicial = VelocidadeX;//AMBOS SAO 0, ENTAO SAO IGUAIS
   VeloInicialY = VelocidadeY;//AMBOS SAO 0, ENTAO SAO IGUAIS
 
+  
   MudarPosiçaoCobra();
   let Resultado = isGameOver();
   if (Resultado) {
@@ -117,9 +119,8 @@ function isGameOver() {
 }
 
 function drawPontos() {//AQUI É O CONTADOR DE PONTOS NO CANTO SUPERIOR DIREITO
-  ctx.fillStyle = "white";
-  ctx.font = "14px Verdana";
-  ctx.fillText(`Nivel: ${nivel}`+"     Pontos: " + Pontos, canvas.width - 170, 15);//ESSE 60 E ESSE 10 DETERMINAM A DISTANCIA DA "PAREDE" E DO "TETO", RESPECTIVAMENTE.(MARGIN LEFT E MARGIN TOP)
+  infoTela.textContent = `Nivel: ${nivel} Pontos: ${Pontos}`+"       "
+
 }
 
 function LimpaTela() {//GRID DO JOGO
@@ -224,6 +225,6 @@ MAIS FUNÇÕES E MANEIRAS DE SER USADA DO QUE A VAR, ENTÃO VOU COMEÇAR A USAR 
 NOS MEUS CÓDIGOS POIS DIZEM QUE COM O TEMPO TALVEZ A VAR FIQUE OBSOLETA. 
 
 -------------------------------------------------------------
-PARTICIPANTES DO GRUPO: PEDRO GASPAR E BENTO GABRIEL
+PARTICIPANTES DO GRUPO: PEDRO GASPAR, BENTO GABRIEL E JOSIAS OLIVEIRA
 -------------------------------------------------------------
 */
