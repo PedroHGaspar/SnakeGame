@@ -201,6 +201,7 @@ function keyDown(event) {
 drawGame();//AQUI DESENHA O JOGO INTEIRO
 
 
+
 //CONSIDERAÇÕES FINAIS:
 
 /*
