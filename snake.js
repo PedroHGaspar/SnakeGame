@@ -41,6 +41,11 @@ let Pontos = 0;//PONTOS VALEM 10 COM VALOR INICIAL DE 0
 let valorPontos = 10
 
 //game loop
+function drawPontos() {//AQUI É O CONTADOR DE PONTOS NO CANTO SUPERIOR DIREITO
+  infoTela.textContent = `Nivel: ${nivel} Pontos: ${Pontos}`+"       "
+  
+
+}
 function drawGame() {
   VeloInicial = VelocidadeX;//AMBOS SAO 0, ENTAO SAO IGUAIS
   VeloInicialY = VelocidadeY;//AMBOS SAO 0, ENTAO SAO IGUAIS
@@ -59,12 +64,14 @@ function drawGame() {
   DesenharCobras();
   drawPontos();
 
-  if (Pontos >= 100) {
-    velocidade = 9;
+  if (Pontos >=100) {
+    velocidade = 10;
+    valorPontos=20
     nivel = 2;
   }
   if (Pontos >= 300) {//AQUI PODE SE COLOCAR MAIS IFS CASO QUEIRA QUE A VELOCIDADE SEJA MAIOR. SÓ COLOCAR QUANTOS PONTOS A MAIS  E QUAL A VELOCIDADE A MAIS QUE DESEJAR
-    velocidade = 11;
+    velocidade = 12;
+    valorPontos=50
     nivel = 3;
   }
   if(Pontos > 800){//AQUI SE OS PONTOS FOREM MAIORES DO QUE 500, O JOGO IRÁ ENCERRAR.
@@ -117,10 +124,7 @@ function isGameOver() {
   return gameOver;
 }
 
-function drawPontos() {//AQUI É O CONTADOR DE PONTOS NO CANTO SUPERIOR DIREITO
-  infoTela.textContent = `Nivel: ${nivel} Pontos: ${Pontos}`+"       "
 
-}
 
 function LimpaTela() {//GRID DO JOGO
   ctx.fillStyle = "black";
@@ -159,6 +163,7 @@ function ChecarPosicaoMaça() {
     MacaY = Math.floor(Math.random() * ContadorQuadrado);
     TamanhoCauda++;
     Pontos+= valorPontos;
+
     
     
   }//AQUI CASO A COBRINHA PASSE POR CIMA DA COMIDINHA, ELA IRÁ SOMAR NO TAMANHO DA CAUDA E TAMBÉM NOS PONTOS NO CANTO SUPERIOR DIREITO
