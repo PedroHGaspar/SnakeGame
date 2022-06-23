@@ -45,7 +45,7 @@ body{
 }
 
 #infotela{
-    background-color: rgb(243, 227, 3);
+    background-color: rgb(252, 1, 1);
     width: 390px;
     text-align: left;
     margin: 0;
@@ -53,6 +53,8 @@ body{
     padding-left: 10px;
     color: rgb(0, 0, 0);
     border-bottom:5px solid rgb(96, 23, 212);
+    border-top:5px solid rgb(96, 23, 212);
+    padding-top: 3px;
 }
 .rodape{
     padding-bottom: 70px;
@@ -70,14 +72,18 @@ body{
 }
 
 #Restart{
-    background-color: red;
+    background-color: rgb(255, 255, 255);
     position: absolute;
     margin-left: 320px;
-    margin-top: 40px;
+    margin-top: 36px;
     font-size: 9px;
     height: 20px;
-    border-top:3px solid rgb(96, 23, 212);
-    border-left:4px solid rgb(96, 23, 212);
-    border-right:3px solid rgb(96, 23, 212);
-    border-bottom:3px solid rgb(96, 23, 212);
+    border-left:5px solid rgb(96, 23, 212);
+}
+#gameover{
+    color: rgb(0, 0, 0);
+    position: absolute;
+    margin-top: 200px;
+    -webkit-text-stroke: 1px rgb(240, 12, 12);
+
 }

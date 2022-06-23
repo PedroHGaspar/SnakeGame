@@ -109,27 +109,10 @@ function isGameOver() {
     }
   }
 
-  if (gameOver) {
-    ctx.fillStyle = "white";
-    ctx.font = "50px Verdana";
-
-    if (gameOver) {
-      ctx.fillStyle = "white";
-      ctx.font = "50px Verdana";
-
-      var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-      gradient.addColorStop("0.1", "yellow");
-      gradient.addColorStop("1.0", "red");
-      //A FUNÇÃO LINEAR GRADIENT ELA FAZ UMA GRADIÊNCIA NAS CORES COMO O PRÓPRIO NOME JA DIZ, E AQUI ELA AGE COMO SE FOSSE UM CÍRCULO, COMEÇANDO NO VERMELHO, INDO PARA O MAGENTA, DEPOIS PARA O AZUL, EM SEGUIDA PARA O MAGENTA E FINALIZANDO NO VERMELHO
-
-      // ISSO AQUI EU ACHEI NA INTERNET DIZENDO QUE A FUNÇÃO DO CANVAS PODERIA TRAZER ESTILO PARA DENTRO DO JS, COMO SE FOSSE UM ESTILO IN-LINE, PORÉM DIRETAMENTE NO ARQUIVO JS, O QUE ACHEI UMA DOIDEIRA, MAS JÁ VI MUITAS COISAS ASSIM LÁ NO ESTÁGIO, ENTÃO DECIDI COLOCAR AQUI. EM TEORIA, ELE FAZ COM QUE SE ELIMINE UM ARQUIVO .STYLE E EVITA TER QUE CRIAR FUNÇÕES LÁ E TRAZER PARA CÁ, PORÉM O CÓDIGO JS FICA POLUÍDO DE INFORMAÇÕES QUE PODERIAM ESTAR EM ARQUIVOS DIFERENTES.
-      ctx.fillStyle = gradient;
-
-      ctx.fillText("Game Over!", canvas.width / 6.5, canvas.height / 2);
-    }
-
-    ctx.fillText("Game Over!", canvas.width / 6.5, canvas.height / 2);
-  }
+  if (gameOver){
+    let fimdejogo = document.getElementById("gameover")
+    fimdejogo.textContent = "GAME OVER"
+  } 
 
   return gameOver;
 }
