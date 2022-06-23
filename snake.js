@@ -1,6 +1,3 @@
-
-
-
 const canvas = document.getElementById("game");//CHAMA LA NO INDEX.HTML A ID GAME
 const ctx = canvas.getContext("2d");//FUNCTION DO CANVAS É FEITA EM 2DIMENSÕES
 const infoTela = document.getElementById("infotela")
@@ -11,7 +8,8 @@ class ParteCobra {//AQUI EU USEI CLASS PARA "TESTAR" ALGO QUE ESTOU APRENDENDO A
     this.y = y;
   }
 }
-
+var imgMaca = new Image()
+imgMaca.src = 'C:\Users\Josias Rodrigues\OneDrive\Documentos\SnakeGame\maca'
 const Restart = document.getElementById("Restart");
 
 Restart.addEventListener("click", function() {
@@ -20,7 +18,7 @@ Restart.addEventListener("click", function() {
 
 })
 
-let velocidade = 7; //VELOCIDADE PADRAO DA COBRINHA, POREM VAI AUMENTAR DEPOIS DE PEGAR ALGUMAS MAÇÃS
+let velocidade = 8; //VELOCIDADE PADRAO DA COBRINHA, POREM VAI AUMENTAR DEPOIS DE PEGAR ALGUMAS MAÇÃS
 let nivel = 1 //NIVEL INICIAL DO GAME
 
 let ContadorQuadrado = 20;
@@ -49,26 +47,25 @@ function drawGame() {
 
   
   MudarPosiçaoCobra();
+  
   let Resultado = isGameOver();
   if (Resultado) {
     return;
   }
 
   LimpaTela();
-
   ChecarPosicaoMaça();
   DesenharMaca();
   DesenharCobras();
-
   drawPontos();
 
   if (Pontos >= 100) {
     velocidade = 9;
-    nivel = 2
+    nivel = 2;
   }
   if (Pontos >= 300) {//AQUI PODE SE COLOCAR MAIS IFS CASO QUEIRA QUE A VELOCIDADE SEJA MAIOR. SÓ COLOCAR QUANTOS PONTOS A MAIS  E QUAL A VELOCIDADE A MAIS QUE DESEJAR
     velocidade = 11;
-    nivel = 3
+    nivel = 3;
   }
   if(Pontos > 500){//AQUI SE OS PONTOS FOREM MAIORES DO QUE 500, O JOGO IRÁ ENCERRAR.
     gameOver()
@@ -100,6 +97,15 @@ function isGameOver() {
     if (part.x === CabecaX && part.y === CabecaY) {
       gameOver = true;
       break;
+    }
+    for (let o = 0;o < partesCobrita.length;o++){
+      let part = partesCobrita[o]
+      if (part.x ===MacaX && part.y===MacaY){
+        MacaX = Math.floor(Math.random() * ContadorQuadrado);
+        MacaY = Math.floor(Math.random() * ContadorQuadrado);
+        
+
+      }
     }
   }
 
@@ -160,8 +166,8 @@ function MudarPosiçaoCobra() {
 }
 
 function DesenharMaca() {//FUNÇAO PARA DESENHAR A MAÇÃ
-  ctx.fillStyle = "red";
-  ctx.fillRect(MacaX * ContadorQuadrado, MacaY * ContadorQuadrado, TamanhoQuadrado, TamanhoQuadrado);
+  ctx.fillStyle = "red"
+  ctx.fillRect( MacaX * ContadorQuadrado, MacaY * ContadorQuadrado, TamanhoQuadrado, TamanhoQuadrado);
 }
 
 function ChecarPosicaoMaça() {

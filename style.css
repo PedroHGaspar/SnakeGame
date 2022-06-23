@@ -58,6 +58,7 @@ body{
 }
 
 #Restart{
+    background-color: red;
     position: absolute;
     margin-left: 325px;
     margin-top: 40px;
