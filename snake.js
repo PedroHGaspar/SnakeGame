@@ -8,8 +8,7 @@ class ParteCobra {//AQUI EU USEI CLASS PARA "TESTAR" ALGO QUE ESTOU APRENDENDO A
     this.y = y;
   }
 }
-var imgMaca = new Image()
-imgMaca.src = 'C:\Users\Josias Rodrigues\OneDrive\Documentos\SnakeGame\maca'
+
 const Restart = document.getElementById("Restart");
 
 Restart.addEventListener("click", function() {
@@ -39,6 +38,7 @@ let VeloInicial = 0;//VELOCIDADE INICIAL = 0 OU SEJA COBRINHA PARADA
 let VeloInicialY = 0;//VELOCIDADE INICIAL = 0 OU SEJA COBRINHA PARADA
 
 let Pontos = 0;//PONTOS VALEM 10 COM VALOR INICIAL DE 0
+let valorPontos = 10
 
 //game loop
 function drawGame() {
@@ -67,7 +67,7 @@ function drawGame() {
     velocidade = 11;
     nivel = 3;
   }
-  if(Pontos > 500){//AQUI SE OS PONTOS FOREM MAIORES DO QUE 500, O JOGO IRÁ ENCERRAR.
+  if(Pontos > 800){//AQUI SE OS PONTOS FOREM MAIORES DO QUE 500, O JOGO IRÁ ENCERRAR.
     gameOver()
   }
 
@@ -175,7 +175,9 @@ function ChecarPosicaoMaça() {
     MacaX = Math.floor(Math.random() * ContadorQuadrado);
     MacaY = Math.floor(Math.random() * ContadorQuadrado);
     TamanhoCauda++;
-    Pontos+= 10;
+    Pontos+= valorPontos;
+    
+    
   }//AQUI CASO A COBRINHA PASSE POR CIMA DA COMIDINHA, ELA IRÁ SOMAR NO TAMANHO DA CAUDA E TAMBÉM NOS PONTOS NO CANTO SUPERIOR DIREITO
 }
 

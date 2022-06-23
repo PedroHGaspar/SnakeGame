@@ -1,6 +1,9 @@
 
 *{
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Potta One', cursive;
+    font-family: 'Press Start 2P', cursive;
+    
 }
 
 body{
@@ -22,18 +25,22 @@ body{
     border:8px solid rgb(96, 23, 212);
     padding-left: 0px;
     border-radius: 5px;
+    height: 540px;
     
 }
 
  
 
 .titulo{
-    color: green;
+    color: rgb(1, 161, 1);
     background-color: rgb(243, 227, 3);
     width: 400px;
     margin: 0;
     margin-top: 0px;
+    font-size: 26px;
     text-align: center;
+    padding-top: 5px;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
     height: 40px;
 }
 
@@ -42,9 +49,10 @@ body{
     width: 390px;
     text-align: left;
     margin: 0;
+    font-size: 15px;
     padding-left: 10px;
     color: rgb(0, 0, 0);
-    border-bottom:5px solid rgb(96, 23, 212)
+    border-bottom:5px solid rgb(96, 23, 212);
 }
 .rodape{
     padding-bottom: 70px;
@@ -52,14 +60,24 @@ body{
     font-size: 20px;
     background-color: rgba(12, 12, 10, 0.6);
     width: 100%;
-    margin-top: 100px;
+    margin-top: 0px;
+    border-top:5px solid rgb(96, 23, 212);
     margin-bottom: 0px;
-    height: 90px;
+    height: 10px;
+    font-size: 15px;
+    padding-top:4px;
+    padding-bottom: 60px;
 }
 
 #Restart{
     background-color: red;
     position: absolute;
-    margin-left: 325px;
+    margin-left: 320px;
     margin-top: 40px;
+    font-size: 9px;
+    height: 20px;
+    border-top:3px solid rgb(96, 23, 212);
+    border-left:4px solid rgb(96, 23, 212);
+    border-right:3px solid rgb(96, 23, 212);
+    border-bottom:3px solid rgb(96, 23, 212);
 }
