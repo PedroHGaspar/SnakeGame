@@ -1,3 +1,6 @@
+
+
+
 const canvas = document.getElementById("game");//CHAMA LA NO INDEX.HTML A ID GAME
 const ctx = canvas.getContext("2d");//FUNCTION DO CANVAS É FEITA EM 2DIMENSÕES
 const infoTela = document.getElementById("infotela")
@@ -8,6 +11,14 @@ class ParteCobra {//AQUI EU USEI CLASS PARA "TESTAR" ALGO QUE ESTOU APRENDENDO A
     this.y = y;
   }
 }
+
+const Restart = document.getElementById("Restart");
+
+Restart.addEventListener("click", function() {
+    
+    location.reload();
+
+})
 
 let velocidade = 7; //VELOCIDADE PADRAO DA COBRINHA, POREM VAI AUMENTAR DEPOIS DE PEGAR ALGUMAS MAÇÃS
 let nivel = 1 //NIVEL INICIAL DO GAME
