@@ -23,7 +23,6 @@ body{
     width: 400px;
     border:8px solid rgb(96, 23, 212);
     padding-left: 0px;
-    border-radius: 5px;
     height: 540px;
     
 }
@@ -40,6 +39,7 @@ body{
     padding-top: 5px;
     -webkit-text-stroke: 1px rgb(0, 0, 0);
     height: 40px;
+    letter-spacing: 2px;
 }
 
 #infotela{
@@ -85,3 +85,19 @@ body{
     -webkit-text-stroke: 1px rgb(240, 12, 12);
 
 }
+#senai{
+    background-color: blue;
+    text-align: left;
+    width: 65px;
+    padding: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    color: white;
+    margin-top: 16px;
+    font-size: 12px;
+    margin-left: -8px;
+    border:3px solid rgb(96, 23, 212);
+    
+}
+
