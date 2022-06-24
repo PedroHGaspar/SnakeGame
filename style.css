@@ -7,9 +7,8 @@
 }
 
 body{
-    margin: 0;
-    margin-top: 0px;
-    background: linear-gradient(129deg, #6B53CE 0%, #6F5ADC 23%, #7F7994 64%, #8E8E8E 90%, #969393 96%, #777777 100%);
+    margin-bottom: 330px;
+    background: linear-gradient(145deg,#6F5ADC 33%, #7F7994 66%, #8E8E8E 99%);
     display: flex;
     flex-direction: column;
     align-items: center;

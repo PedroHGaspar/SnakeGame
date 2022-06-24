@@ -9,11 +9,11 @@ class ParteCobra {//AQUI EU USEI CLASS PARA "TESTAR" ALGO QUE ESTOU APRENDENDO A
   }
 }
 
-const Restart = document.getElementById("Restart");
+const Restart = document.getElementById("Restart");//BOTAO RESTART
 
 Restart.addEventListener("click", function() {
     
-    location.reload();
+    location.reload();//FUNÇAO DA INTERNET PARA DAR RELOAD NA PAGINA. SIMPLES.
 
 })
 
@@ -28,8 +28,8 @@ let CabecaY = 10;//TAMANHO DA CABEÇA NO EIXO Y
 const partesCobrita = [];//COMO PODEMOS VER ACIMA, X = 10 E Y = 10, E O TAMANHO DE CADA QUADRADO, ELE TRABALHA MAIS OU MENOS COMO X = Y = 10
 let TamanhoCauda = 3;
 
-let MacaX = 5;//TAMANHO NO EIXO X = 5
-let MacaY = 5;//TAMANHO NO EIXO Y = 5
+let MacaX = 5;//POSIÇÃO INICIAL DA COMIDA
+let MacaY = 5;//POSIÇÃO INICIAL DA COMIDA
 // MESMA COISA DO TAMANHO DO QUADRADO, ACIMA ELES ESTAO SE COMPLETANDO 5+5=10(TAMANHO DO QUADRADO)
 let VelocidadeX = 0;//VELOCIDADE INICIAL ANTES DE APERTAR BOTOES
 let VelocidadeY = 0;//VELOCIDADE INICIAL ANTES DE APERTAR BOTOES
@@ -44,13 +44,11 @@ let valorPontos = 10
 function drawPontos() {//AQUI É O CONTADOR DE PONTOS NO CANTO SUPERIOR DIREITO
   infoTela.textContent = `Nivel: ${nivel} Pontos: ${Pontos}`+"       "
   
-
 }
 function drawGame() {
   VeloInicial = VelocidadeX;//AMBOS SAO 0, ENTAO SAO IGUAIS
   VeloInicialY = VelocidadeY;//AMBOS SAO 0, ENTAO SAO IGUAIS
 
-  
   MudarPosiçaoCobra();
   
   let Resultado = isGameOver();
@@ -75,7 +73,6 @@ function drawGame() {
     nivel = 3;
   }
  
-
   setTimeout(drawGame, 1000 / velocidade); //AQUI FAZ COM QUE A TELA SE "ATUALIZE A CADA 1000MS, OU SEJA, 1SEGUNDO, PODENDO FAZER COM QUE A VELOCIDADE DA COBRINHA MUDE AQUI NO CÓDIGO CASO ALGUÉM QUEIRA."
 }
 
@@ -112,8 +109,6 @@ function isGameOver() {
       if (part.x ===MacaX && part.y===MacaY){
         MacaX = Math.floor(Math.random() * ContadorQuadrado);
         MacaY = Math.floor(Math.random() * ContadorQuadrado);
-        
-
       }
     }
   }
@@ -125,7 +120,6 @@ function isGameOver() {
 
   return gameOver;
 }
-
 
 
 function LimpaTela() {//GRID DO JOGO
@@ -158,8 +152,6 @@ function DesenharMaca() {//FUNÇAO PARA DESENHAR A MAÇÃ
   ctx.fillStyle = "red"
   ctx.fillRect( MacaX * ContadorQuadrado, MacaY * ContadorQuadrado, TamanhoQuadrado, TamanhoQuadrado);
 
-
-
 }
 
 function ChecarPosicaoMaça() {
@@ -169,8 +161,6 @@ function ChecarPosicaoMaça() {
     TamanhoCauda++;
     Pontos+= valorPontos;
 
-    
-    
   }//AQUI CASO A COBRINHA PASSE POR CIMA DA COMIDINHA, ELA IRÁ SOMAR NO TAMANHO DA CAUDA E TAMBÉM NOS PONTOS NO CANTO SUPERIOR DIREITO
 }
 
@@ -210,9 +200,7 @@ function keyDown(event) {
   }
 }
 
-
 drawGame();//AQUI DESENHA O JOGO INTEIRO
-
 
 
 //CONSIDERAÇÕES FINAIS:
@@ -240,5 +228,3 @@ NOS MEUS CÓDIGOS POIS DIZEM QUE COM O TEMPO TALVEZ A VAR FIQUE OBSOLETA.
 PARTICIPANTES DO GRUPO: PEDRO GASPAR, BENTO GABRIEL E JOSIAS OLIVEIRA
 -------------------------------------------------------------
 */
-
-//TESTE COMMIT PEDRO
