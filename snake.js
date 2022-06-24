@@ -149,8 +149,14 @@ function MudarPosiçaoCobra() {
 }
 
 function DesenharMaca() {//FUNÇAO PARA DESENHAR A MAÇÃ
-  ctx.fillStyle = "red"
-  ctx.fillRect( MacaX * ContadorQuadrado, MacaY * ContadorQuadrado, TamanhoQuadrado, TamanhoQuadrado);
+    ctx.fillStyle="red"
+    ctx.beginPath()
+    ctx.arc(MacaX * ContadorQuadrado+10,MacaY * ContadorQuadrado+10,9,0,2*3)
+    ctx.fill()
+    ctx.fillStyle="green"
+    ctx.beginPath()
+    ctx.arc(MacaX * ContadorQuadrado+2,MacaY * ContadorQuadrado+8,8,4,2*3)
+    ctx.fill()
 
 }
 
