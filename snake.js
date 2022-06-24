@@ -26,7 +26,7 @@ let TamanhoQuadrado = canvas.width / ContadorQuadrado - 2;
 let CabecaX = 10;//TAMANHO DA CABEÇA NO EIXO X
 let CabecaY = 10;//TAMANHO DA CABEÇA NO EIXO Y
 const partesCobrita = [];//COMO PODEMOS VER ACIMA, X = 10 E Y = 10, E O TAMANHO DE CADA QUADRADO, ELE TRABALHA MAIS OU MENOS COMO X = Y = 10
-let TamanhoCauda = 2;
+let TamanhoCauda = 3;
 
 let MacaX = 5;//TAMANHO NO EIXO X = 5
 let MacaY = 5;//TAMANHO NO EIXO Y = 5
@@ -65,7 +65,7 @@ function drawGame() {
   drawPontos();
 
   if (Pontos >=100) {
-    velocidade = 10;
+    velocidade = 11;
     valorPontos=20
     nivel = 2;
   }
@@ -74,9 +74,7 @@ function drawGame() {
     valorPontos=50
     nivel = 3;
   }
-  if(Pontos > 800){//AQUI SE OS PONTOS FOREM MAIORES DO QUE 500, O JOGO IRÁ ENCERRAR.
-    gameOver()
-  }
+ 
 
   setTimeout(drawGame, 1000 / velocidade); //AQUI FAZ COM QUE A TELA SE "ATUALIZE A CADA 1000MS, OU SEJA, 1SEGUNDO, PODENDO FAZER COM QUE A VELOCIDADE DA COBRINHA MUDE AQUI NO CÓDIGO CASO ALGUÉM QUEIRA."
 }
@@ -87,7 +85,11 @@ function isGameOver() {
   if (VeloInicialY === 0 && VeloInicial === 0) {
     return false;
   }
-
+ if(Pontos == 800){//AQUI SE OS PONTOS FOREM MAIORES DO QUE 500, O JOGO IRÁ ENCERRAR.
+    let fimdejogo = document.getElementById("gameover")
+    fimdejogo.textContent = "GAME OVER"
+    gameOver = true
+  }
   //AQUI IRÁ IMPEDIR QUE A COBRA BATA NA PAREDE, SE BATER, PERDE
   if (CabecaX < 0) {
     gameOver = true;
@@ -155,6 +157,9 @@ function MudarPosiçaoCobra() {
 function DesenharMaca() {//FUNÇAO PARA DESENHAR A MAÇÃ
   ctx.fillStyle = "red"
   ctx.fillRect( MacaX * ContadorQuadrado, MacaY * ContadorQuadrado, TamanhoQuadrado, TamanhoQuadrado);
+
+
+
 }
 
 function ChecarPosicaoMaça() {
