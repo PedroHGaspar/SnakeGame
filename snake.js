@@ -1,6 +1,6 @@
 const canvas = document.getElementById("game");//CHAMA LA NO INDEX.HTML A ID GAME
 const ctx = canvas.getContext("2d");//FUNCTION DO CANVAS É FEITA EM 2DIMENSÕES
-const infoTela = document.getElementById("infotela")
+const infoTela = document.getElementById("infotela")//Caminho das informacoes que quero mostrar .
 
 class ParteCobra {//AQUI EU USEI CLASS PARA "TESTAR" ALGO QUE ESTOU APRENDENDO AOS POUCOS, MAS PELO QUE EU ENTENDI, A CLASS TEM QUASE A MESMA FUNÇÃO DA FUNCTION, SÓ QUE SE USA CLASS NO LUGAR. NESSE CASO EU USEI E DEU CERTO, IREI PROCURAR MAIS INFORMAÇÕES A RESPEITO DA DIFERENÇA ENTRE CLASS E FUNCTION NO ARQUIVO JAVASCRIPT
   constructor(x, y) {
@@ -26,7 +26,7 @@ let TamanhoQuadrado = canvas.width / ContadorQuadrado - 2;
 let CabecaX = 10;//TAMANHO DA CABEÇA NO EIXO X
 let CabecaY = 10;//TAMANHO DA CABEÇA NO EIXO Y
 const partesCobrita = [];//COMO PODEMOS VER ACIMA, X = 10 E Y = 10, E O TAMANHO DE CADA QUADRADO, ELE TRABALHA MAIS OU MENOS COMO X = Y = 10
-let TamanhoCauda = 3;
+let TamanhoCauda = 2;
 
 let MacaX = 5;//POSIÇÃO INICIAL DA COMIDA
 let MacaY = 5;//POSIÇÃO INICIAL DA COMIDA
@@ -78,14 +78,14 @@ function drawGame() {
 
 function isGameOver() {
   let gameOver = false;
+  let fimdejogo = false
 
   if (VeloInicialY === 0 && VeloInicial === 0) {
     return false;
   }
  if(Pontos == 800){//AQUI SE OS PONTOS FOREM MAIORES DO QUE 500, O JOGO IRÁ ENCERRAR.
-    let fimdejogo = document.getElementById("gameover")
-    fimdejogo.textContent = "GAME OVER"
-    gameOver = true
+    
+    fimdejogo = true
   }
   //AQUI IRÁ IMPEDIR QUE A COBRA BATA NA PAREDE, SE BATER, PERDE
   if (CabecaX < 0) {
@@ -116,6 +116,14 @@ function isGameOver() {
   if (gameOver){
     let fimdejogo = document.getElementById("gameover")
     fimdejogo.textContent = "GAME OVER"
+  } 
+  if (fimdejogo){
+    let fimdejogo = document.getElementById("gameover")
+    fimdejogo.textContent = "PARABENS VOCE FINALIZOU O GAME :)"
+    return gameOver
+
+    
+    
   } 
 
   return gameOver;
@@ -209,7 +217,7 @@ function keyDown(event) {
 drawGame();//AQUI DESENHA O JOGO INTEIRO
 
 
-//CONSIDERAÇÕES FINAIS:
+//CONSIDERAÇÕES FINAIS PEDRO:
 
 /*
 
@@ -234,3 +242,5 @@ NOS MEUS CÓDIGOS POIS DIZEM QUE COM O TEMPO TALVEZ A VAR FIQUE OBSOLETA.
 PARTICIPANTES DO GRUPO: PEDRO GASPAR, BENTO GABRIEL E JOSIAS OLIVEIRA
 -------------------------------------------------------------
 */
+
+
